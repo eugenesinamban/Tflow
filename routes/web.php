@@ -17,6 +17,11 @@ Route::get('/', 'PagesController@index');
 
 Auth::routes();
 
+Route::get('/search', 'SearchController@search');
 Route::resource('questions', 'QuestionsController');
+Route::get('/tag', 'QuestionsController@tagView');
+Route::resource('profile', 'ProfilesController');
+Route::resource('answers', 'AnswersController')->except('store');
+Route::post('/answers/{id}/{question_title}', 'AnswersController@store')->name('answers.store');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
