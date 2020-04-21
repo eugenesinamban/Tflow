@@ -1,6 +1,6 @@
 <h3 class="mt-4">{{ count($answers).(count($answers) > 1 ? ' Answers' : ' Answer')}}</h3>
 @foreach($answers as $answer)
-    <div class="card">
+    <div class="card mb-2">
         <div class="card-body">
             <p class="card-text">
                 {{{$answer->answer}}}
@@ -9,7 +9,7 @@
         <div class="card-footer">
             <div class="row ">
                 <div class="col-sm-7">
-                    <small>Answered by : {{ $answer->user->username }} on {{ $answer->created_at }}</small>
+                    <small>Answered by : <a href="/profile/{{ $answer->user->username }}">{{ $answer->user->username }}</a> on {{ $answer->created_at }}</small>
                 </div>
                 <div class="col-sm-5">
                     <div class="row">

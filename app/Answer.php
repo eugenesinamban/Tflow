@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class Answer extends Model
+class Answer extends Model implements Searchable
 {
     protected $fillable = ['answer'];
 
@@ -16,4 +18,8 @@ class Answer extends Model
         return $this->belongsTo(Question::class);
     }
 
+    public function getSearchResult(): SearchResult
+    {
+        return new SearchResult($this, $this->answer);
+    }
 }

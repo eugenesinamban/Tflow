@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-auto mr-auto">
-            <h1>Questions</h1>
+            <h1>Questions{{ $title ?? "" }}</h1>
         </div>
         <div class="col-auto">
             <a href="{{ action('QuestionsController@create') }}" class="btn btn-primary">Add Question</a>

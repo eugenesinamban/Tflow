@@ -27,7 +27,7 @@
         <div class="card-footer">
             <small class="card-text">Tags:
             @foreach($question->tags as $tag)
-                <a href="#" class="btn-sm btn-light mr-2">{{ $tag->name }}</a>
+                <a href="/tag/{{$tag->name}}" class="btn-sm btn-light mr-2">{{ $tag->name }}</a>
             @endforeach
             </small>
         </div>

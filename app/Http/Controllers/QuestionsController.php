@@ -47,7 +47,8 @@ class QuestionsController extends Controller
         $data = $request->validate([
             'question_title' => 'required',
             'question_body' => 'required',
-            'tag' => 'alpha_num|nullable|min:3'
+            'tag' => 'nullable|min:3'
+//            TODO fix tag, can't use alphanum coz we need commas for tags
         ]);
 
         $tags = STR::of($data['tag'])->explode(', ');
@@ -62,7 +63,7 @@ class QuestionsController extends Controller
 
 //        attach tags
         foreach ($tags as $tag) {
-            if ("" !== $tag && "," !== $tag && null !== $tag) {
+            if ("" != $tag && "," != $tag && null != $tag && " " != $tag) {
                 $tag = Tag::firstOrCreate(['name' => $tag]);
 
                 $question->tags()->attach($tag->id);
@@ -136,7 +137,9 @@ class QuestionsController extends Controller
         $tagIds = [];
 
         foreach ($tags as $tag) {
-            $tagIds[] = Tag::firstOrCreate(['name' => $tag])->id;
+            if ("" != $tag && "," != $tag && null != $tag && " " != $tag) {
+                $tagIds[] = Tag::firstOrCreate(['name' => $tag])->id;
+            }
         }
 
 //        dd($tagIds);
@@ -161,6 +164,17 @@ class QuestionsController extends Controller
 
         return redirect('/questions')->with('success', 'Question Deleted Successfully');
 
+    }
+
+    public function tagView(Tag $tag)
+    {
+//        dd($tag);
+
+        $questions = $tag->questions()->orderBy('created_at', 'DESC')->paginate(10);
+
+        $title = ' with tag "' . $tag->name . '"';
+
+        return view('questions.index', compact(['questions', 'title']));
     }
 
 }
