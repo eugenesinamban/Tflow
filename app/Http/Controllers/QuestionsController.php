@@ -48,12 +48,9 @@ class QuestionsController extends Controller
             'question_title' => 'required',
             'question_body' => 'required',
             'tag' => 'nullable|min:3'
-//            TODO fix tag, can't use alphanum coz we need commas for tags
         ]);
 
         $tags = STR::of($data['tag'])->explode(', ');
-//        dd($tags);
-//        $tags = explode(', ', $data['tag']);
 
 //        remove tags
         array_pop($data);
