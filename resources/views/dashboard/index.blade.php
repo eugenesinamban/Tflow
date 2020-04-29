@@ -61,4 +61,9 @@
         </div>
     </div>
     @endforeach
+    <div class="card mt-5">
+        <div class="card-body">
+            <a href="{{ route('confirm') }}" class="card-link text-danger">Deactivate Account</a>
+        </div>
+    </div>
 @endsection

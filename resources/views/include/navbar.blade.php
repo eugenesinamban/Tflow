@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            <img src="/storage/images/tflow.png" alt="Logo" class="img-fluid" style="max-width: 5rem;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -17,16 +17,22 @@
                         <a href="/questions" class="nav-link">Questions</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled">Game</a>
+                        <a href="/field/Game" class="nav-link">Game</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled">AI & Robot</a>
+                        <a href="/field/e-Sports" class="nav-link">e-Sports</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled">Web & IT</a>
+                        <a href="/field/AI & Robot" class="nav-link">AI & Robot</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link disabled">CG & Video</a>
+                        <a href="/field/Web & IT" class="nav-link">Web & IT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/field/Anime & Illustration" class="nav-link">Anime & Illustration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/field/CG & Video" class="nav-link">CG & Video</a>
                     </li>
                 </ul>
         @endguest

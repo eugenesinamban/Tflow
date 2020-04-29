@@ -31,12 +31,16 @@
                         <table class="table">
                             <tbody>
                             <tr>
+                                <th>Field</th>
+                                <td>{{ $user->course->field->name }}</td>
+                            </tr>
+                            <tr>
                                 <th>Course</th>
-                                <td>{{ $profile->course }}</td>
+                                <td>{{ $user->course->name }}</td>
                             </tr>
                             <tr>
                                 <th>Year</th>
-                                <td>{{ $profile->year }}</td>
+                                <td>{{ $user->year }}</td>
                             </tr>
                             <tr>
                                 <th>About myself:</th>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Course;
+use App\Field;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -54,6 +56,8 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'course_id' => ['required', 'integer', 'max:22'],
+            'year' => ['required', 'integer', 'max:4']
         ]);
     }
 
@@ -70,6 +74,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
+            'field_id' => Course::find($data['course_id'])->field_id,
+            'course_id' => $data['course_id'],
+            'year' => $data['year']
         ]);
     }
 }

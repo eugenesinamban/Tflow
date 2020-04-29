@@ -5,26 +5,10 @@ namespace App\Http\Controllers;
 use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfilesController extends Controller
 {
-
-    public $courses = [
-        'スーパーゲームクリエイター専攻',
-        'ゲームプログラマー専攻',
-        'ゲームキャラクターデザイン専攻',
-        'ゲーム企画・シナリオ専攻',
-        'ゲームCGデザイン専攻',
-        'スーパーITエンジニア専攻',
-        'プログラマー専攻',
-        'ロボット&IoT専攻',
-        'スーパーデジタルメディア専攻',
-        'コミックイラスト専攻',
-        '総合アニメーション専攻',
-        '国際ビジネスマネージメント専攻',
-        'eSportsプロマネージメント専攻'
-    ];
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -50,8 +34,7 @@ class ProfilesController extends Controller
      */
     public function create()
     {
-        $user = auth()->user();
-        return view('profiles.create', compact('user'));
+        //
     }
 
     /**
@@ -62,22 +45,7 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request()->validate([
-            'details' => 'nullable',
-            'url' => 'nullable',
-            'profile_image' => 'required'
-        ]);
-
-        $imagePath = request()->file('profile_image')->store('profile_images', 'public');
-
-        auth()->user()->profile()->create([
-            'details' => $data['details'],
-            'url' => $data['url'],
-            'profile_image' => $imagePath
-        ]);
-
-        return redirect('/profile');
-
+        //
     }
 
     /**
@@ -107,11 +75,10 @@ class ProfilesController extends Controller
     public function edit($id)
     {
         $this->authorize('update', Profile::find($id));
+
         $profile = Profile::find($id);
 
-        $courses = $this->courses;
-
-        return view('profiles.edit', compact(['profile', 'courses']));
+        return view('profiles.edit', compact('profile'));
     }
 
     /**
@@ -128,17 +95,14 @@ class ProfilesController extends Controller
         $data = $request->validate([
             'details' => 'nullable',
             'url' => ['url', 'nullable'],
-            'profile_image' => 'max:1999',
-            'about_myself' => 'min:10',
-            'course' => 'string',
-            'year' => 'integer'
+            'profile_image' => ['max:1999', 'image'],
+            'about_myself' => ['min:10', 'nullable'],
         ]);
 
-
-
         if ($request->has('profile_image')) {
-//            dd($request);
-            $imagePath = request()->file('profile_image')->store('profile_images', 'public');
+
+            $image = request()->file('profile_image');
+            $imagePath = Storage::disk('public')->put('profile_images', $image);
 
             $imageArray = ['profile_image' => $imagePath];
         };

@@ -65,7 +65,7 @@ class QuestionPolicy
      */
     public function delete(User $user, Question $question)
     {
-        //
+        return $user->id === $question->user_id;
     }
 
     /**
@@ -77,7 +77,7 @@ class QuestionPolicy
      */
     public function restore(User $user, Question $question)
     {
-        //
+        return $user->id === $question->user_id;
     }
 
     /**
@@ -89,6 +89,6 @@ class QuestionPolicy
      */
     public function forceDelete(User $user, Question $question)
     {
-        //
+        return $user->id === $question->user_id;
     }
 }

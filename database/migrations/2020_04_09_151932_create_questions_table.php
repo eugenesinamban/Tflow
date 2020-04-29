@@ -13,11 +13,13 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('question_title');
             $table->mediumText('question_body');
+            $table->softDeletes('deleted_at', 0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();

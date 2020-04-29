@@ -13,15 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
 Route::get('/search', 'SearchController@search');
 Route::resource('questions', 'QuestionsController');
 Route::get('/tag/{tag:name}', 'QuestionsController@tagView');
+Route::get('/field/{field:name}', 'QuestionsController@fieldView');
+Route::get('/course/{course:name}', 'QuestionsController@courseView');
 Route::resource('profile', 'ProfilesController');
 Route::resource('answers', 'AnswersController')->except('store');
 Route::post('/answers/{id}/{question_title}', 'AnswersController@store')->name('answers.store');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/deactivate', 'DashboardController@deactivate')->name('confirm')->middleware(['auth', 'password.confirm']);
+Route::get('/reactivate', 'ReactivateAccountController@reactivate');
+Route::post('/reactivate', 'ReactivateAccountController@authenticate')->name('reactivate');
+Route::delete('/deactivate/{user}', 'DeactivateAccountController@destroy')->name('deactivate');
+Route::delete('/deleteAccount/{user}', 'DeleteAccountController@deleteAccount')->name('deleteAccount');

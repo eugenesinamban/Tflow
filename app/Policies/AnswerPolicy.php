@@ -3,9 +3,9 @@
 namespace App\Policies;
 
 use App\Answer;
+use App\Question;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Symfony\Component\Console\Question\Question;
 
 class AnswerPolicy
 {
@@ -37,12 +37,13 @@ class AnswerPolicy
     /**
      * Determine whether the user can create models.
      *
-     * @param  \App\User  $user
+     * @param \App\User $user
+     * @param Question $question
      * @return mixed
      */
-    public function create(Question $question)
+    public function create(User $user, Question $question)
     {
-
+        return $user->id !== $question->user_id;
     }
 
     /**
@@ -66,7 +67,7 @@ class AnswerPolicy
      */
     public function delete(User $user, Answer $answer)
     {
-        //
+        return $user->id === $answer->user_id;
     }
 
     /**
@@ -78,7 +79,7 @@ class AnswerPolicy
      */
     public function restore(User $user, Answer $answer)
     {
-        //
+        return $user->id === $answer->user_id;
     }
 
     /**
@@ -90,6 +91,6 @@ class AnswerPolicy
      */
     public function forceDelete(User $user, Answer $answer)
     {
-        //
+        return $user->id === $answer->user_id;
     }
 }

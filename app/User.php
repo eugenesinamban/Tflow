@@ -3,14 +3,18 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
+
+
 class User extends Authenticatable implements Searchable
 {
+    use SoftDeletes;
     use Notifiable;
+//    use Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +22,7 @@ class User extends Authenticatable implements Searchable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'username', 'password',
+        'name', 'email', 'username', 'password', 'course_id', 'field_id', 'year'
     ];
 
     /**
@@ -50,7 +54,8 @@ class User extends Authenticatable implements Searchable
             $user->profile()->create([
                 'profile_image' => 'images/noImage.png',
                 'details' => 'No entries',
-                'url' => '#'
+                'url' => '#',
+                'about_myself' => 'No Entry'
             ]);
         });
 
@@ -68,8 +73,14 @@ class User extends Authenticatable implements Searchable
         return $this->hasOne(Profile::class);
     }
 
+    public function course() {
+        return $this->belongsTo(Course::class);
+    }
+
     public function getSearchResult(): SearchResult
     {
-        return new SearchResult($this, $this->username);
+        $url = '/profile/' . $this->username;
+
+        return new SearchResult($this, $this->username, $url);
     }
 }

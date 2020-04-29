@@ -44,11 +44,12 @@ class AnswersController extends Controller
      */
     public function store(Request $request)
     {
-
-        $data = $request->validate(['answer' => 'min:30']);
-
         $question_id = $request->session()->pull('question_id');
         $question = Question::find($question_id);
+
+        $this->authorize('create', [Answer::class, $question]);
+
+        $data = $request->validate(['answer' => 'min:30']);
 
         $answer = new Answer();
         $answer->user()->associate(auth()->user());
@@ -87,7 +88,9 @@ class AnswersController extends Controller
 
         session(['question_id' => $answer->question->id]);
 
-        return view('answers.edit', compact(['answer', 'question']));
+        $label = 'Edit your answer';
+
+        return view('answers.edit', compact(['answer', 'question', 'label']));
     }
 
     /**
@@ -108,8 +111,7 @@ class AnswersController extends Controller
         $question_id = $request->session()->pull('question_id');
         $question = Question::find($question_id);
 
-        $question->answers()->where('id',$id)->update($data);
-//        Answer::find($id)->update($data);
+        $question->answers()->where('id', $id)->update($data);
 
 
         return redirect('/questions/' . $question_id)->with('success', 'Answer edited successfully!');
@@ -123,10 +125,11 @@ class AnswersController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize('update', Answer::find($id));
+        $this->authorize('forceDelete', Answer::find($id));
 
-        Answer::find($id)->delete();
+        Answer::find($id)->forceDelete();
 
         return redirect(URL::previous())->with('success', 'Answer successfully deleted!');
     }
+
 }

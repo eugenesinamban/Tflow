@@ -6,7 +6,6 @@ use App\Question;
 use App\Tag;
 use App\User;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Searchable\Search;
 
 class AppServiceProvider extends ServiceProvider
 {

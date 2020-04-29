@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class DashboardController extends Controller
 {
@@ -25,5 +27,11 @@ class DashboardController extends Controller
     {
         $questions = auth()->user()->questions;
         return view('dashboard.index', compact('questions'));
+    }
+
+    public function deactivate()
+    {
+        $this->authorize('delete', auth()->user());
+        return view('dashboard.deactivate');
     }
 }

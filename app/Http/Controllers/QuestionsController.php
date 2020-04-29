@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Field;
 use App\Question;
 use App\Tag;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use PhpParser\Node\Stmt\Global_;
 
 class QuestionsController extends Controller
 {
@@ -84,8 +88,9 @@ class QuestionsController extends Controller
 
 //        pass id thru session
         session(['question_id' => $id]);
+        $label = 'Your Answer';
 
-        return view('questions.show', compact(['question','answers']))->with('postId', $id);
+        return view('questions.show', compact(['question','answers', 'label']))->with('postId', $id);
     }
 
     /**
@@ -155,9 +160,9 @@ class QuestionsController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize('update', Question::find($id));
+        $this->authorize('forceDelete', Question::find($id));
 
-        Question::find($id)->delete();
+        Question::find($id)->forceDelete();
 
         return redirect('/questions')->with('success', 'Question Deleted Successfully');
 
@@ -165,7 +170,6 @@ class QuestionsController extends Controller
 
     public function tagView(Tag $tag)
     {
-//        dd($tag);
 
         $questions = $tag->questions()->orderBy('created_at', 'DESC')->paginate(10);
 
@@ -174,4 +178,25 @@ class QuestionsController extends Controller
         return view('questions.index', compact(['questions', 'title']));
     }
 
+    public function fieldView(Field $field)
+    {
+        $questions = Question::whereHas('user.course.field', function (Builder $query) use($field) {
+            $query->where('name', '=', $field->name);
+        })->orderBy('created_at', 'DESC')->paginate(10);
+
+        $title = ' from : "' . $field->name . '"';
+
+        return view('questions.field', compact(['questions', 'title', 'field']));
+    }
+
+    public function courseView(Course $course)
+    {
+        $questions = Question::whereHas('user.course', function (Builder $query) use ($course) {
+           $query->where('name', '=', $course->name);
+        })->orderBy('created_at', 'DESC')->paginate(10);
+
+        $title = ' from : "' . $course->name . '"';
+
+        return view('questions.course', compact(['questions', 'title', 'course']));
+    }
 }

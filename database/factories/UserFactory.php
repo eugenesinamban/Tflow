@@ -21,8 +21,14 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'username' =>$faker->unique()->userName,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+        'course_id' => $faker->numberBetween(1, 22),
+        'field_id' => function ($user) {
+            return \App\Course::find($user['course_id'])->field->id;
+        },
+        'year' => $faker->numberBetween(1, 4)
     ];
 });

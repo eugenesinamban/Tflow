@@ -48,39 +48,6 @@
 
                 </div>
 
-                <div class="form-group">
-                    <label for="course">Course</label>
-                    <select name="course" id="course" class="form-control custom-select @error('course') is-invalid @enderror">
-                        <option @if($profile->course !== '') selected @endif>Choose Course</option>
-                        @foreach($courses as $course)
-                            <option value="{{ $profile->course ?? $course }}" @if($profile->course == $course) selected @endif>{{ $profile->course ?? $course }}</option>
-                        @endforeach
-                    </select>
-
-                    @error('course')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-
-                </div>
-
-                <div class="form-group">
-                    <label for="year">Year</label>
-                    <select name="year" id="year" class="form-control custom-select @error('year') is-invalid @enderror">
-                        <option @if($profile->year === '') selected @endif>Choose Year</option>
-                        @for($x = 1 ; $x <= 4 ; $x++)
-                        <option value="{{ $profile->year ?? $x }}" @if($profile->year == $x) selected @endif>{{ $profile->year ?? $x }}</option>
-                        @endfor
-                    </select>
-
-                    @error('year')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-
-                </div>
 
                 <div class="form-group">
                     <label for="profile_image">Profile Image</label>

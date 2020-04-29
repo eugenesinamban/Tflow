@@ -72,6 +72,44 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="course_id" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="course_id" id="course_id" class="form-control custom-select @error('course_id') is-invalid @enderror">
+                                    <option @if(old('course_id') == '') selected @endif>Choose Course</option>
+                                    @foreach(\App\course::all() as $course)
+                                        <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @error('course_id')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="year" class="col-md-4 col-form-label text-md-right">{{ __('year') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="year" id="year" class="form-control custom-select @error('year') is-invalid @enderror">
+                                    <option @if(old('year') == '') selected @endif>Choose year</option>
+                                    @for($x = 1 ; $x <= 4 ; $x++)
+                                        <option value="{{ $x }}">{{ $x }}</option>
+                                    @endfor
+                                </select>
+
+                                @error('year')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -82,4 +120,5 @@
                     </form>
                 </div>
             </div>
+
 @endsection

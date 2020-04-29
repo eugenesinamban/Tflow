@@ -24,20 +24,7 @@
         @csrf
         @method('PATCH')
 
-        <div class="form-group">
-            <label for="answer" class="col-form-label">Edit Your Answer</label>
-            <textarea name="answer" id="answer" cols="30" rows="10" class="form-control @error('answer') is-invalid @enderror">{{ old('answer') ?? $answer->answer }}</textarea>
+        @include('include.answerForm')
 
-            @error('answer')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-
-        </div>
-
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary">
-        </div>
     </form>
 @endsection

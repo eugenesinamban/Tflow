@@ -47,17 +47,10 @@
     </div>
 
 {{--    answers     --}}
+    @include('answers.show')
 
-    @if(!empty($answers))
-        @include('answers.show')
-    @else
-        <h3 class="mt-4">0 Answers</h3>
+    @if(auth()->user()->id != $question->user->id)
+        @include('answers.create')
     @endif
-
-    @auth
-        @if(auth()->user()->id != $question->user->id)
-            @include('answers.create')
-        @endif
-    @endauth
 
 @endsection
