@@ -78,7 +78,7 @@
                             <div class="col-md-6">
                                 <select name="course_id" id="course_id" class="form-control custom-select @error('course_id') is-invalid @enderror">
                                     <option @if(old('course_id') == '') selected @endif>Choose Course</option>
-                                    @foreach(\App\course::all() as $course)
+                                    @foreach($courses as $course)
                                         <option value="{{ $course->id }}">{{ $course->name }}</option>
                                     @endforeach
                                 </select>
