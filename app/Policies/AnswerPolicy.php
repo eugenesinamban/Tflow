@@ -43,7 +43,7 @@ class AnswerPolicy
      */
     public function create(User $user, Question $question)
     {
-        return $user->id !== $question->user_id;
+        return $user->id !== $question->user_id && $user->hasVerifiedEmail();
     }
 
     /**
@@ -55,7 +55,7 @@ class AnswerPolicy
      */
     public function update(User $user, Answer $answer)
     {
-        return $user->id === $answer->user_id;
+        return $user->id === $answer->user_id && $user->hasVerifiedEmail();
     }
 
     /**

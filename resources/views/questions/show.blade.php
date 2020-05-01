@@ -49,8 +49,11 @@
 {{--    answers     --}}
     @include('answers.show')
 
-    @if(auth()->user()->id != $question->user->id)
+    @can('create', [\App\Answer::class, $question])
         @include('answers.create')
-    @endif
+    @endcan
+
+
+
 
 @endsection

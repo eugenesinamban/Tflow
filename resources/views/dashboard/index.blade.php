@@ -5,7 +5,8 @@
         <div class="card-header">Dashboard</div>
 
         <div class="card-body">
-            <div class="row justify-content-center">
+            @can('create', \App\Question::class)
+            <div class="row justify-content-center mb-4">
                 <div class="col-sm text-center">
                     <h4 class="mt-2">Go ahead and ask away!</h4>
                 </div>
@@ -13,14 +14,28 @@
                     <a href="/questions/create" class="btn btn-primary">Ask some question!</a>
                 </div>
             </div>
+            @endcan
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    Number of questions asked : {{ auth()->user()->questions->count() }}
+                </div>
+                <div class="col text-center">
+                    Number of answers: {{ auth()->user()->answers->count() }}
+                </div>
+            </div>
         </div>
+
     </div>
 
     <hr>
 
+    @if($questions->count() > 0)
+
     <div class="mb-4">
         <h2>Questions asked so far</h2>
     </div>
+
+    @endif
     {{-- foreach comes in here --}}
     @foreach($questions as $question)
     <div class="card mb-2">

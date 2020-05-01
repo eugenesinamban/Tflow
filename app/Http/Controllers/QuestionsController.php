@@ -59,7 +59,7 @@ class QuestionsController extends Controller
 //        remove tags
         array_pop($data);
 
-//        create quesiton
+//        create question
         $question = auth()->user()->questions()->create($data);
 
 //        attach tags
@@ -175,7 +175,9 @@ class QuestionsController extends Controller
 
         $title = ' with tag "' . $tag->name . '"';
 
-        return view('questions.index', compact(['questions', 'title']));
+        $count = $questions->total();
+
+        return view('questions.index', compact(['questions', 'title', 'count']));
     }
 
     public function fieldView(Field $field)
@@ -186,7 +188,9 @@ class QuestionsController extends Controller
 
         $title = ' from : "' . $field->name . '"';
 
-        return view('questions.field', compact(['questions', 'title', 'field']));
+        $count = $questions->total();
+
+        return view('questions.field', compact(['questions', 'title', 'field', 'count']));
     }
 
     public function courseView(Course $course)
@@ -197,6 +201,8 @@ class QuestionsController extends Controller
 
         $title = ' from : "' . $course->name . '"';
 
-        return view('questions.course', compact(['questions', 'title', 'course']));
+        $count = $questions->total();
+
+        return view('questions.course', compact(['questions', 'title', 'course', 'count']));
     }
 }

@@ -10,11 +10,10 @@ use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
 
 
-class User extends Authenticatable implements Searchable
+class User extends Authenticatable implements Searchable, MustVerifyEmail
 {
     use SoftDeletes;
     use Notifiable;
-//    use Searchable;
 
     /**
      * The attributes that are mass assignable.

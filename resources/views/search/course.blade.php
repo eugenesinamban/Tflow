@@ -1,10 +1,12 @@
 <div class="col-sm-4 mb-4">
+    <a href="{{ action('QuestionsController@courseView', $result->title) }}">
     <div class="card">
-        <a href="{{ action('QuestionsController@courseView', $result->title) }}"><img class="card-img-top" src="/storage/{{ $result->searchable->field->field_image }}" alt="Card image cap"></a>
+        <img class="card-img-top" src="/storage/{{ $result->searchable->field->field_image }}" alt="Card image cap">
         <div class="card-body">
-            <p class="card-text">
+            <p class="card-link">
                 {{ $result->searchable->name }}
             </p>
         </div>
     </div>
+    </a>
 </div>
