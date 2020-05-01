@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec639102-7e3c-49fb-bed9-978f6deb05c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="ec639102-7e3c-49fb-bed9-978f6deb05c0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -223,7 +219,7 @@
       <workItem from="1587733995819" duration="19613000" />
       <workItem from="1587827628226" duration="58334000" />
       <workItem from="1587991471395" duration="45886000" />
-      <workItem from="1588151743349" duration="38105000" />
+      <workItem from="1588151743349" duration="38127000" />
     </task>
     <task id="LOCAL-00001" summary="second commit&#10;add create page">
       <created>1586446417690</created>
@@ -302,10 +298,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1536.824@0.0.1536.824" timestamp="1587950472120" />
-    <state x="369" y="0" key="CommitChangelistDialog2" timestamp="1588304575358">
+    <state x="369" y="0" key="CommitChangelistDialog2" timestamp="1588322877700">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="369" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588304575358" />
+    <state x="369" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588322877700" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587995259088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
