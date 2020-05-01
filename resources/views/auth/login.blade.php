@@ -67,4 +67,19 @@
             </form>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-header">
+            Test Account Details
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">
+                Username : test
+                email : test@test.com
+            </h4>
+            <h6 class="card-substitle">
+                password : testtest
+            </h6>
+        </div>
+    </div>
 @endsection
