@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec639102-7e3c-49fb-bed9-978f6deb05c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +221,7 @@
       <workItem from="1587733995819" duration="19613000" />
       <workItem from="1587827628226" duration="58334000" />
       <workItem from="1587991471395" duration="45886000" />
-      <workItem from="1588151743349" duration="33732000" />
+      <workItem from="1588151743349" duration="33849000" />
     </task>
     <task id="LOCAL-00001" summary="second commit&#10;add create page">
       <created>1586446417690</created>
