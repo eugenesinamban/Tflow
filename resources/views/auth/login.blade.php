@@ -75,6 +75,8 @@
         <div class="card-body">
             <h4 class="card-title">
                 Username : test
+            </h4>
+            <h4 class="card-title">
                 email : test@test.com
             </h4>
             <h6 class="card-substitle">
