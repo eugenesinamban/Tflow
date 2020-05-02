@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec639102-7e3c-49fb-bed9-978f6deb05c0" name="Default Changelist" comment="third commit" />
+    <list default="true" id="ec639102-7e3c-49fb-bed9-978f6deb05c0" name="Default Changelist" comment="third commit">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.testing" beforeDir="false" afterPath="$PROJECT_DIR$/.env.testing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,7 +230,7 @@
       <workItem from="1587827628226" duration="58334000" />
       <workItem from="1587991471395" duration="45886000" />
       <workItem from="1588151743349" duration="46039000" />
-      <workItem from="1588347909718" duration="2237000" />
+      <workItem from="1588347909718" duration="2908000" />
     </task>
     <task id="LOCAL-00001" summary="second commit&#10;add create page">
       <created>1586446417690</created>
@@ -405,10 +410,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1588258583066" />
-    <state x="698" y="55" width="672" height="678" key="search.everywhere.popup" timestamp="1588410996528">
+    <state x="698" y="55" width="672" height="678" key="search.everywhere.popup" timestamp="1588411083517">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1586424876018" />
-    <state x="698" y="55" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588410996528" />
+    <state x="698" y="55" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588411083517" />
   </component>
 </project>
