@@ -46,7 +46,6 @@ class AnswersTest extends TestCase
     /** @test **/
     public function a_user_can_answer_questions()
     {
-
         $question = $this->question();
 
         $user = $this->user();
