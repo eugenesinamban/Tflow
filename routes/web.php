@@ -37,9 +37,3 @@ Route::post('/reactivate', 'ReactivateAccountController@authenticate')->name('re
 
 Route::delete('/deactivate/{user}', 'DeactivateAccountController@destroy')->name('deactivate');
 Route::delete('/deleteAccount/{user}', 'DeleteAccountController@deleteAccount')->name('deleteAccount');
-
-//Route::get('/email', function () {
-//    \Illuminate\Support\Facades\Mail::to('test@test.com')->send(new \App\Mail\WelcomeMail());
-//
-//   return new \App\Mail\WelcomeMail();
-//});

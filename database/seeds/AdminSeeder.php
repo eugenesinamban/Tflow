@@ -16,6 +16,7 @@ class AdminSeeder extends Seeder
         \App\User::create([
             'name' => 'Eugene Sinamban',
             'email' => 'eugene.sinamban@gmail.com',
+            'email_verified_at' => now(),
             'username' => 'codejunkie21',
             'password' => Hash::make('fuminalove'),
             'course_id' => 7,

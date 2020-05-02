@@ -19,16 +19,16 @@ class DatabaseSeeder extends Seeder
 //            AdminSeeder::class
         ]);
 
-        \App\User::create([
-            'name' => 'test',
-            'email' => 'test@test.com',
-            'username' => 'test',
-            'email_verified_at' => now(),
-            'password' => Hash::make('testtest'),
-            'course_id' => 7,
-            'field_id' => 2,
-            'year' => 2
-        ]);
+//        \App\User::create([
+//            'name' => 'test',
+//            'email' => 'test@test.com',
+//            'username' => 'test',
+//            'email_verified_at' => now(),
+//            'password' => Hash::make('testtest'),
+//            'course_id' => 7,
+//            'field_id' => 2,
+//            'year' => 2
+//        ]);
 
     }
 }

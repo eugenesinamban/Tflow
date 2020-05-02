@@ -47,17 +47,17 @@ class AnswersTest extends TestCase
     public function a_user_can_answer_questions()
     {
 
-       $question = $this->question();
+        $question = $this->question();
 
-       $user = $this->user();
+        $user = $this->user();
 
-       $response = $this->actingAs($user)
+        $response = $this->actingAs($user)
            ->withSession(['question_id' => $question->id])
            ->post('/answers/' . $question->id . '/' . $question->question_title, [
-           'answer' => 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-       ]);
+           'answer' => 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        ]);
 
-       $this->assertEquals('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', Answer::first()->answer);
+        $this->assertEquals('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', Answer::first()->answer);
        $response->assertRedirect();
     }
 

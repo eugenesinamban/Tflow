@@ -45,6 +45,7 @@ class AnswersController extends Controller
      */
     public function store(Request $request)
     {
+
         $question_id = $request->session()->pull('question_id');
         $question = Question::find($question_id);
 
