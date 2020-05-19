@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ec639102-7e3c-49fb-bed9-978f6deb05c0" name="Default Changelist" comment="third commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/questions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/questions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/questions/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/questions/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search/field.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search/field.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/search/results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search/results.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/answers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/answers/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/answers/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/answers/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/deactivate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/deactivate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/answerForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/answerForm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/back.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/back.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/message.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/questionForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/questionForm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/questionHeader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/questionHeader.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/include/questions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/include/questions.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +225,7 @@
       <workItem from="1588347909718" duration="14941000" />
       <workItem from="1588472481662" duration="2446000" />
       <workItem from="1588665358054" duration="599000" />
-      <workItem from="1589852604977" duration="1183000" />
+      <workItem from="1589852604977" duration="2195000" />
     </task>
     <task id="LOCAL-00001" summary="second commit&#10;add create page">
       <created>1586446417690</created>

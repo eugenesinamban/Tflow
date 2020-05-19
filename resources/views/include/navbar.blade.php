@@ -14,10 +14,10 @@
             @else
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="/questions" class="nav-link">Questions</a>
+                        <a href="/questions" class="nav-link">質問</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/field/Game" class="nav-link">Game</a>
+                        <a href="/field/Game" class="nav-link">ゲーム</a>
                     </li>
                     <li class="nav-item">
                         <a href="/field/e-Sports" class="nav-link">e-Sports</a>
@@ -41,11 +41,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('登録') }}</a>
                         </li>
                     @endif
                 @else
@@ -78,7 +78,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('ログアウト') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

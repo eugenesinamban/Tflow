@@ -2,25 +2,25 @@
 
 @section('content')
     <div class="card mb-4">
-        <div class="card-header">Dashboard</div>
+        <div class="card-header">ダッシュボード</div>
 
         <div class="card-body">
             @can('create', \App\Question::class)
             <div class="row justify-content-center mb-4">
                 <div class="col-sm text-center">
-                    <h4 class="mt-2">Go ahead and ask away!</h4>
+                    <h4 class="mt-2">質問を聞いてみましょう！</h4>
                 </div>
                 <div class="col-sm text-center">
-                    <a href="/questions/create" class="btn btn-primary">Ask some question!</a>
+                    <a href="/questions/create" class="btn btn-primary">質問を聞く</a>
                 </div>
             </div>
             @endcan
             <div class="row justify-content-center">
                 <div class="col text-center">
-                    Number of questions asked : {{ auth()->user()->questions->count() }}
+                    質問数{{ auth()->user()->questions->count() }}
                 </div>
                 <div class="col text-center">
-                    Number of answers: {{ auth()->user()->answers->count() }}
+                    回答数 {{ auth()->user()->answers->count() }}
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
     @if($questions->count() > 0)
 
     <div class="mb-4">
-        <h2>Questions asked so far</h2>
+        <h2>今まで聞いた質問</h2>
     </div>
 
     @endif
@@ -55,14 +55,14 @@
                     <div class="row">
                         <div class="col">
                             <a href="{{ action('QuestionsController@edit', $question->id) }}" class="btn btn-primary form-control">
-                                Edit
+                                編集
                             </a>
                         </div>
                         <div class="col">
                             <form action="{{ action('QuestionsController@destroy', $question->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <input type="submit" class="btn btn-danger form-control" value="Delete">
+                                <input type="submit" class="btn btn-danger form-control" value="削除">
                             </form>
                         </div>
                     </div>
@@ -71,14 +71,14 @@
         </div>
         <div class="card-footer">
             <p class="card-text">
-                <small>Asked on {{ $question->created_at }} | Last updated on {{ $question->updated_at }}</small>
+                <small>作成日時 {{ $question->created_at }} | 更新時 {{ $question->updated_at }}</small>
             </p>
         </div>
     </div>
     @endforeach
     <div class="card mt-5">
         <div class="card-body">
-            <a href="{{ route('confirm') }}" class="card-link text-danger">Deactivate Account</a>
+            <a href="{{ route('confirm') }}" class="card-link text-danger">アカウント削除</a>
         </div>
     </div>
 @endsection

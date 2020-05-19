@@ -9,14 +9,14 @@
         <div class="card-footer">
             <div class="row ">
                 <div class="col-sm-7">
-                    <small>Answered by : <a href="/profile/{{ $answer->user->username }}">{{ $answer->user->username }}</a> on {{ $answer->created_at }}</small>
+                    <small>質問者 <a href="/profile/{{ $answer->user->username }}">{{ $answer->user->username }}</a> 作成日時 {{ $answer->created_at }}</small>
                 </div>
 
                 @if($answer->user->id === auth()->user()->id)
                 <div class="col-sm-5">
                     <div class="row">
                         <div class="col">
-                            <a href="{{ action('AnswersController@edit', $answer->id) }}" class="btn btn-sm btn-link card-link">Edit Answer</a>
+                            <a href="{{ action('AnswersController@edit', $answer->id) }}" class="btn btn-sm btn-link card-link">回答編集</a>
                         </div>
                         <div class="col">
                             <form action="{{ action('AnswersController@destroy', $answer->id) }}" method="post" class="w-50">

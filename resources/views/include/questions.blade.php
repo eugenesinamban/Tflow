@@ -7,7 +7,7 @@
         </div>
         <div class="card-footer">
             <h6 class="card-subtitle">
-                Created by <a href="/profile/{{$question->user->username}}">{{ $question->user['username'] }}</a> | Created at {{ $question['created_at'] }}
+                質問者 <a href="/profile/{{$question->user->username}}">{{ $question->user['username'] }}</a> | 作成日時 {{ $question['created_at'] }}
             </h6>
         </div>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3>Question to be answered</h3>
+    <h3>質問</h3>
     <div class="card mb-4">
         <div class="card-body">
             <h4 class="card-title">
@@ -13,8 +13,8 @@
         </div>
         <div class="card-footer">
             <small>
-                Asked by : <a href="{{ action('ProfilesController@show', $question->user->username) }}" class="card-link">{{ $question->user->username }}</a>
-                on {{ $question->updated_at }}
+                質問者 <a href="{{ action('ProfilesController@show', $question->user->username) }}" class="card-link">{{ $question->user->username }}</a>
+                作成日時 {{ $question->updated_at }}
             </small>
         </div>
     </div>
