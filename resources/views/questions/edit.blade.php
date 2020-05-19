@@ -3,7 +3,7 @@
 @section('content')
     <a href="{{ action("QuestionsController@show", $question->id) }}" class="btn btn-light">Back</a>
     <hr>
-    <h1>Edit question</h1>
+    <h1>質問編集</h1>
     <div class="card">
         <div class="card-body">
             <div class="row justify-content-center">

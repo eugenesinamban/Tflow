@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1 class="title">Welcome To TFlow!</h1>
-        <small>Home of the Future Engineers</small>
+        <h1 class="title">Tflowへようこそ！</h1>
+        <small>Tech Cの学生たちのオンライン質問掲示板</small>
     </div>
 @endsection

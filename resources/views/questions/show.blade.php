@@ -11,10 +11,10 @@
                 {{ $question->question_title }}
             </h5>
             <h6 class="card-subtitle mb-2">
-                By <a href="{{ action('ProfilesController@show', $question->user->username) }}" class="card-link">{{ $question->user->username }}</a>
+                質問者 <a href="{{ action('ProfilesController@show', $question->user->username) }}" class="card-link">{{ $question->user->username }}</a>
             </h6>
             <small>
-                Created at {{ $question->created_at }} | Last updated at {{ $question->updated_at }}
+                作成日時{{ $question->created_at }} | 更新時 {{ $question->updated_at }}
             </small>
             <hr>
             <p class="card-text">

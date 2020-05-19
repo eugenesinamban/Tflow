@@ -3,7 +3,7 @@
 @section('content')
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
     <hr>
-    <h1>Ask a question!</h1>
+    <h1>質問を聞きましょう</h1>
     <div class="card">
         <div class="card-body">
             <div class="row justify-content-center">

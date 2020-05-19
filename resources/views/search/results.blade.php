@@ -34,7 +34,7 @@
                                 <small class="card-text">{{ $result->searchable->question_body }}</small>
                             </div>
                             <div class="card-footer">
-                                <small>Asked by <a href="/profile/{{ $result->searchable->user->username }}">{{ $result->searchable->user->username }}</a></small>
+                                <small>質問者：<a href="/profile/{{ $result->searchable->user->username }}">{{ $result->searchable->user->username }}</a></small>
                             </div>
                         </div>
                     @endforeach
@@ -54,7 +54,7 @@
                                 <small class="card-text"><a href="/profile/{{ $result->searchable->user->username }}">{{ $result->searchable->user->username }}</a> : {{ $result->searchable->answer }}</small>
                             </div>
                             <div class="card-footer">
-                                <small>Asked by <a href="/profile/{{ $result->searchable->question->user->username }}">{{ $result->searchable->question->user->username }}</a></small>
+                                <small>質問者<a href="/profile/{{ $result->searchable->question->user->username }}">{{ $result->searchable->question->user->username }}</a></small>
                             </div>
                         </div>
                     @endforeach

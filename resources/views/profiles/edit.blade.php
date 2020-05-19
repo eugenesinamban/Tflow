@@ -4,7 +4,7 @@
     @include('include.back')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title mt-2">Edit Profile</h3>
+            <h3 class="card-title mt-2">プロフィール編集</h3>
         </div>
         <div class="card-body">
             <form action="{{ action('ProfilesController@update', $profile->id) }}" method="post" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
                 @method('PATCH')
 
                 <div class="form-group">
-                    <label for="details">Details</label>
+                    <label for="details">ステータス</label>
                     <input type="text" name="details" id="details" class="form-control @error('details') is-invalid @enderror " value="{{ old('details') ?? ($profile->details === 'No entries' ? '' : $profile->details) }}">
 
                     @error('details')
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="about_myself">About Myself</label>
+                    <label for="about_myself">自己紹介</label>
                     <textarea name="about_myself" id="about_myself" class="form-control @error('about_myself') is-invalid @enderror ">{{ old('about_myself') ?? ($profile->about_myself === '#' ? '' : $profile->about_myself) }}</textarea>
 
                     @error('about_myself')
@@ -50,8 +50,8 @@
 
 
                 <div class="form-group">
-                    <label for="profile_image">Profile Image</label>
-                    <small>Max size 2mb</small>
+                    <label for="profile_image">プロフィール写真</label>
+                    <small>最大２mb</small>
                     <input type="file" name="profile_image" id="profile_image" class="form-control-file @error('profile_image') is-invalid @enderror">
                     @error('profile_image')
                     <span class="invalid-feedback">
