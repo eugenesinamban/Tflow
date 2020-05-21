@@ -37,8 +37,7 @@ class ProfilesTest extends TestCase
     public function a_user_can_upload_a_profile_image()
     {
         $user = $this->user();
-        Storage::fake('gcs');
-//        Storage::fake('public');
+        Storage::fake('public');
 //        Storage::disk('gcs');
 
         $image = UploadedFile::fake()->image('profile_image.png')->size(1500);
