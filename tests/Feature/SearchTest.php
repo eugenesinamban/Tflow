@@ -23,7 +23,7 @@ class SearchTest extends TestCase
 
         $response = $this->actingAs($user)->get('/search', ['search' => 'test']);
         $this->assertAuthenticated();
-        $response->dumpSession();
+//        $response->dumpSession();
 //        $response->dump();
 //        $response->assertRedirect('/search');
     }

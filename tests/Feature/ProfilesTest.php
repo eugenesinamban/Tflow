@@ -37,8 +37,9 @@ class ProfilesTest extends TestCase
     public function a_user_can_upload_a_profile_image()
     {
         $user = $this->user();
-
-        Storage::fake('public');
+        Storage::fake('gcs');
+//        Storage::fake('public');
+//        Storage::disk('gcs');
 
         $image = UploadedFile::fake()->image('profile_image.png')->size(1500);
 
@@ -46,6 +47,7 @@ class ProfilesTest extends TestCase
 
         $response->assertRedirect('/profile');
         Storage::disk('public')->assertExists('/profile_images/' . $image->hashName());
+//        Storage::disk('gcs')->assertExists('/profile_images/' . $image->hashName());
 
     }
 }

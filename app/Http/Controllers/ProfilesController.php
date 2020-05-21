@@ -102,7 +102,8 @@ class ProfilesController extends Controller
         if ($request->has('profile_image')) {
 
             $image = request()->file('profile_image');
-            $imagePath = Storage::disk('public')->put('profile_images', $image);
+//            $imagePath = Storage::disk('public')->put('profile_images', $image);
+            $imagePath = Storage::disk('gcs')->put('profile_images', $image);
 
             $imageArray = ['profile_image' => $imagePath];
         };
