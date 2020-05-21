@@ -67,7 +67,7 @@ return [
         'gcs' => [
             'driver' => 'gcs',
             'project_id' => env('GOOGLE_CLOUD_PROJECT_ID'),
-            'key_file' => 'tactical-gate-277801-92e3e1d2326f.json',
+            'key_file' => base_path(env('GOOGLE_KEY_FILE_PATH', 'tactical-gate-277801-92e3e1d2326f.json')),
             'bucket' => env('GOOGLE_CLOUD_STORAGE_BUCKET', 'tech-c-overflow'),
             'path_prefix' => env('GOOGLE_CLOUD_STORAGE_PATH_PREFIX', null),
             'storage_api_uri' => env('GOOGLE_CLOUD_STORAGE_API_URI', null),

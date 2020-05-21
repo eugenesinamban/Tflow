@@ -48,6 +48,9 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('登録') }}</a>
                         </li>
                     @endif
+                    <li class="nav-item">
+                        <a href="/privacy_policy" class="nav-link">プライバシーポリシー</a>
+                    </li>
                 @else
                     <li class="nav-item">
                         <form action="{{ action('SearchController@search') }}" method="get" class="mt-2">
@@ -75,6 +78,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a href="/dashboard/" class="dropdown-item">ダッシュボード</a>
                             <a href="/profile/" class="dropdown-item">プロフィール</a>
+                            <a href="/privacy_policy" class="dropdown-item">プライバシーポリシー</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -87,9 +91,6 @@
                         </div>
                     </li>
                 @endguest
-                <li class="nav-item">
-                    <a href="/privacy_policy" class="nav-link">Privacy Policy</a>
-                </li>
             </ul>
         </div>
     </div>

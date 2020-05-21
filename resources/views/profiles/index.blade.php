@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="card w-100" style="max-width: 20rem;">
-                        <img src="/storage/{{ $profile->profile_image }}" alt="" class="card-img-top">
+                        <img src="{{ $url . $profile->profile_image }}" alt="" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{ $user->name }}</h5>
                             <h6 class="card-subtitle text-muted">{{ $user->username }} | 登録日時 {{ $user->created_at }}</h6>

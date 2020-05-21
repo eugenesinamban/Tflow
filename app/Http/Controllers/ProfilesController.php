@@ -23,8 +23,8 @@ class ProfilesController extends Controller
     {
         $user = auth()->user();
         $profile = $user->profile;
-
-        return view('profiles.index', compact(['user', 'profile']));
+        $url = $user->profile->profile_image !== 'images/noImage.png' ? 'https://storage.cloud.google.com/tech-c-overflow/' : '/storage/';
+        return view('profiles.index', compact(['user', 'profile', 'url']));
     }
 
     /**
@@ -62,8 +62,8 @@ class ProfilesController extends Controller
 
         $user = User::where('username', $id)->firstOrFail();
         $profile = $user->profile;
-
-        return view('profiles.index', compact(['user', 'profile']));
+        $url = $user->profile->profile_image !== 'images/noImage.png' ? 'https://storage.cloud.google.com/tech-c-overflow/' : '/storage/';
+        return view('profiles.index', compact(['user', 'profile', 'url']));
     }
 
     /**
@@ -104,7 +104,12 @@ class ProfilesController extends Controller
             $image = request()->file('profile_image');
 //            dd($image);
 //            $imagePath = Storage::disk('public')->put('profile_images', $image);
-            $imagePath = Storage::disk('gcs')->put('profile_images', $image);
+            try {
+                $imagePath = Storage::disk('gcs')->put('profile_images', $image);
+            } catch(\Exception $e) {
+                dd($e);
+            }
+
 
             $imageArray = ['profile_image' => $imagePath];
 
