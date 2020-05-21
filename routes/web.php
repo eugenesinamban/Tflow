@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('/privacy_policy', 'WelcomeController@privacy');
 
 Auth::routes(['verify' => true]);
 

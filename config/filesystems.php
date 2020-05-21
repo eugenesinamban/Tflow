@@ -64,6 +64,15 @@ return [
             'endpoint' => env('AWS_URL'),
         ],
 
+//        'gcs' => [
+//            'driver' => 'gcs',
+//            'project_id' => '',
+//            'key_file' => '',
+//            'bucket' => env('GOOGLE_CLOUD_STORAGE_BUCKET', 'your-bucket'),
+//            'path_prefix' => env('GOOGLE_CLOUD_STORAGE_PATH_PREFIX', null),
+//            'storage_api_uri' => env('GOOGLE_CLOUD_STORAGE_API_URI', null),
+//            'visibility' => 'public',
+//        ]
     ],
 
     /*

@@ -54,12 +54,12 @@
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <input type="search" name="search" class="form-control" placeholder="Search">
+                                        <input type="search" name="search" class="form-control" placeholder="検索">
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <input type="submit" value="Submit" class="btn btn-primary">
+                                        <input type="submit" value="送信" class="btn btn-primary">
                                     </div>
                                 </div>
                             </div>
@@ -73,8 +73,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a href="/dashboard/" class="dropdown-item">Dashboard</a>
-                            <a href="/profile/" class="dropdown-item">Profile</a>
+                            <a href="/dashboard/" class="dropdown-item">ダッシュボード</a>
+                            <a href="/profile/" class="dropdown-item">プロフィール</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -87,6 +87,9 @@
                         </div>
                     </li>
                 @endguest
+                <li class="nav-item">
+                    <a href="/privacy_policy" class="nav-link">Privacy Policy</a>
+                </li>
             </ul>
         </div>
     </div>

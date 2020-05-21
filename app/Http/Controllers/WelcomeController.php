@@ -13,4 +13,8 @@ class WelcomeController extends Controller
         }
         return view('welcome.index');
     }
+
+    public function privacy() {
+        return view('welcome.privacyPolicy');
+    }
 }
